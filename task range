@@ -1,0 +1,42 @@
+// Getting input via STDIN
+const readline = require("readline");
+
+const inp = readline.createInterface({
+  input: process.stdin
+});
+
+const userInput = [];
+
+inp.on("line", (data) => {
+  userInput.push(data);
+});
+
+inp.on("close", () => {
+  //start-here
+  //Your code goes here … replace the below line with your code logic 
+  function rangeBetwee(start, end) 
+{
+  
+        if (start > end) {
+            var arr = new Array(start - end + 1);
+            for (var i = 0; i < arr.length; i++, start--) {
+                arr[i] = start;
+            }
+            return arr;
+        } 
+       else 
+       {
+            var arro = new Array(end-start+1);
+         
+        for (var j = 0; j < arro.length; j++, start++) 
+        {
+            arro[j] = start;
+        }
+              return arro;
+        }
+    }
+
+console.log(rangeBetwee(3, 7));
+console.log(rangeBetwee(-4, 7));
+  //end-here
+});
